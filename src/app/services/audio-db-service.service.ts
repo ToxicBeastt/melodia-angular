@@ -6,14 +6,19 @@ import {HttpClient} from "@angular/common/http";
 })
 export class AudioDbServiceService {
   private apiUrl = 'https://www.theaudiodb.com/api/v1/json/2';
+  private artist = 'coldplay';
 
   constructor(private http: HttpClient) { }
 
-  getArtist(artistName: string) {
-    return this.http.get(`${this.apiUrl}/search.php?s=${artistName}`);
+  getArtist() {
+    return this.http.get(`${this.apiUrl}/search.php?s=${this.artist}`);
   }
 
-  getAlbums(artistId: number) {
-    return this.http.get(`${this.apiUrl}/album.php?i=${artistId}`);
+  getAlbums() {
+    return this.http.get(`${this.apiUrl}/album.php?s=${this.artist}`);
+  }
+
+  getNewReleases() {
+    return this.http.get(`${this.apiUrl}/discography.php?s=${this.artist}`);
   }
 }
