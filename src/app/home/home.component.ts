@@ -2,13 +2,15 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {RouterLink} from "@angular/router";
 import {AudioDbServiceService} from "../services/audio-db-service.service";
 import {HeroComponent} from "./components/hero/hero.component";
+import {DiscographyComponent} from "./components/discography/discography.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     RouterLink,
-    HeroComponent
+    HeroComponent,
+    DiscographyComponent
   ],
   providers:[AudioDbServiceService],
   templateUrl: './home.component.html',
@@ -19,9 +21,8 @@ export class HomeComponent implements OnInit{
   constructor(@Inject(AudioDbServiceService) private audioDbService: AudioDbServiceService) { }
 
   ngOnInit(): void {
-    this.audioDbService.getAlbums().subscribe(response => {
-      console.log('Received response:', response);
-      this.newReleases = response;
+    this.audioDbService.getNewReleases().subscribe((response: any) => {
+      this.newReleases = response.album;
     }, error => {
       console.error('Error:', error);
     });
