@@ -1,0 +1,11 @@
+<button
+  class="py-2 px-4 rounded font-bold"
+  [class]="{
+    'bg-primary-500 hover:bg-primary-700': type === 'primary',
+    'bg-secondary-500 hover:bg-secondary-700': type === 'secondary',
+    'text-white': type === 'primary',
+    'text-secondary-700': type === 'secondary'
+  } + ' py-2 px-4 rounded font-bold bg-primary-500'"
+  (click)="onClick.emit($event)">
+  <ng-content></ng-content>
+</button>
