@@ -12,11 +12,11 @@ import {NgForOf} from "@angular/common";
 })
 export class FooterComponent {
   products: { product: string, company:string }[] = [
-    { product: 'Product 1', company: 'Company 1' },
-    { product: 'Product 2', company: 'Company 2' },
-    { product: 'Product 3', company: 'Company 3' },
-    { product: 'Product 4', company: 'Company 4' },
-    { product: 'Product 5', company: 'Company 5' },
+    { product: 'Cheer Up Lip Balm', company: 'TWICE Beauty' },
+    { product: 'Fancy Fashion T-Shirt', company: 'ONCE Merch' },
+    { product: 'Likey Lifestyle Pillow', company: 'Likey Home' },
+    { product: 'Signal Stationery Set', company: 'TWICE School' },
+    { product: 'TT Tech Earbuds', company: 'TWICE Audio' },
   ];
   constructor() {
     console.log('FooterComponent constructor called');

@@ -3,6 +3,7 @@ import {RouterLink} from "@angular/router";
 import {AudioDbServiceService} from "../services/audio-db-service.service";
 import {HeroComponent} from "./components/hero/hero.component";
 import {DiscographyComponent} from "./components/discography/discography.component";
+import {SosialMediaComponent} from "./components/sosial-media/sosial-media.component";
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import {DiscographyComponent} from "./components/discography/discography.compone
   imports: [
     RouterLink,
     HeroComponent,
-    DiscographyComponent
+    DiscographyComponent,
+    SosialMediaComponent
   ],
   providers:[AudioDbServiceService],
   templateUrl: './home.component.html',

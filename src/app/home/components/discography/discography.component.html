@@ -1,9 +1,9 @@
-<div class="w-full p-4 pt-6 md:p-6 lg:p-12 text-center bg-light-gray">
+<div class="w-full p-4 pt-6 md:p-6 lg:p-12 text-center bg-primary-200">
   <h2 class="text-3xl font-bold mb-4">Our Discography</h2>
-  <p class="text-lg text-gray-600 mb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <p class="text-lg text-dark-900 mb-6">TWICE has released several successful albums, including "The Story Begins", "Page Two", "Twicecoaster: Lane 1", and more. Explore our discography and listen to our hit songs!</p>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4 justify-items-center">
     <div *ngFor="let album of albums; let i = index" class="p-4">
-      <div class="bg-white shadow-md h-100 rounded p-4 flex flex-col justify-between">
+      <div class="bg-light-100 shadow-md h-100 rounded p-4 flex flex-col justify-between">
         <div>
           <img
             ngSrc='{{ "/assets/twice_album(" + (i+1) + ").jpeg" }}'
@@ -14,8 +14,7 @@
           />
           <h3 class="text-lg font-bold mb-2 line-clamp-2">{{ album.strAlbum }}</h3>
         </div>
-        <button
-          class="bg-midnight-black text-ivory-white py-2 px-4 rounded hover:bg-gray-700 transition duration-300">Listen Now</button>
+        <app-button type="primary">Listen Now</app-button>
       </div>
     </div>
   </div>

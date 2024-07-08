@@ -1,25 +1,25 @@
-<div class="flex gap-5 mx-auto px-4 py-8 bg-secondary-300">
+<div class="flex gap-5 mx-auto px-4 py-8 bg-dark-500">
   <div class="flex gap-10 w-1/2">
     <div class="text-center mb-8 flex flex-col">
-      <h1 class="text-2xl font-bold mb-2">TRADE</h1>
+      <h1 class="text-2xl font-bold mb-2 text-primary-500">ONCE</h1>
     </div>
     <div class="mb-8 flex-1 gap-5 flex flex-col">
-      <h2 class="text-lg font-medium text-gray-600">Latest Blog Post</h2>
-      <h3 class="text-md font-bold mb-2">Ready to get started?</h3>
-      <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <h2 class="text-lg font-medium text-gray-600">Latest News</h2>
+      <h3 class="text-md font-bold mb-2 text-primary-400">Get the latest updates on TWICE!</h3>
+      <p class="text-gray-600">Stay up-to-date with the latest news, music releases, and concert schedules from TWICE. Follow us for exclusive content and behind-the-scenes peeks into the lives of your favorite K-pop idols!</p>
     </div>
   </div>
-  <div class="border-l border-gray-300"></div>
+  <div class="border-l border-dark-900"></div>
   <div class="mx-8">
     <div class="flex flex-col gap-8 mb-8">
       <div *ngFor="let product of products" class="flex items-center gap-2">
-        <span class="text-lg font-medium">{{ product.product }}</span>
+        <span class="text-lg font-medium text-primary-300">{{ product.product }}</span>
         <span class="text-lg text-gray-600">{{ product.company }}</span>
       </div>
       <div class="text-center mb-8 flex gap-5">
-        <p class="text-gray-600">&copy; 2010-2020</p>
-        <a class="text-gray-600 hover:text-gray-900" href="#">Privacy</a>
-        <a class="text-gray-600 hover:text-gray-900" href="#">Terms</a>
+        <p class="text-gray-600">&copy; 2020 JYP Entertainment. All rights reserved.</p>
+        <a class="text-primary-500 hover:text-primary-700" href="#">Privacy Policy</a>
+        <a class="text-primary-500 hover:text-primary-700" href="#">Terms of Use</a>
       </div>
     </div>
   </div>
