@@ -6,7 +6,7 @@
       <div class="bg-light-100 shadow-md h-100 rounded p-4 flex flex-col justify-between">
         <div>
           <img
-            ngSrc='{{ "/assets/twice_album(" + (i+1) + ").jpeg" }}'
+            [ngSrc]='album.strAlbumThumb'
             alt="Album Cover"
             class="w-full object-cover rounded-t"
             width="48"
@@ -14,8 +14,10 @@
           />
           <h3 class="text-lg font-bold mb-2 line-clamp-2">{{ album.strAlbum }}</h3>
         </div>
-        <app-button type="primary">Listen Now</app-button>
+        <app-button type="primary" (click)="navigateToAlbumDetail(album.idAlbum)">Listen Now</app-button>
       </div>
     </div>
   </div>
 </div>
+
+

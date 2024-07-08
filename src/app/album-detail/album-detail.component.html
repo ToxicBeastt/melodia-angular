@@ -1,0 +1,48 @@
+<div class="flex-1 flex justify-between items-center px-6 py-8 text-white">
+  <div class="image w-1/2 bg-primary-200 rounded-lg overflow-hidden">
+    <div class="flex items-center justify-center p-64">
+      <img
+        [ngSrc]="newAlbum.strAlbumThumb"
+        alt="Album Cover"
+        class="object-cover rounded-t w-64 h-64"
+        height="48"
+        width="48">
+    </div>
+  </div>
+  <div class="w-1/2 gap-8 flex items-center justify-center">
+    <div class="w-3/4 flex flex-col gap-2">
+      <h1 class="text-5xl font-bold mb-4">{{ newAlbum.strAlbum }}</h1>
+      <p class="text-lg font-medium text-gray-200">{{ newAlbum.strArtist }}</p>
+      <p class="text-lg font-medium text-gray-200">{{ newAlbum.strLabel }}</p>
+      <p class="text-lg font-medium text-gray-200">{{ newAlbum.intYearReleased }}</p>
+      <app-button type="primary">Listen Now</app-button>
+    </div>
+  </div>
+</div>
+
+<div class="p-4 rounded shadow-md border border-gray-200 bg-light-800">
+  <h2 class="text-lg font-bold mb-4 text-gray-800">Track List</h2>
+  <ul>
+    <li *ngFor="let track of tracks;let i = index" class="flex justify-between py-4 border-b border-gray-200 hover:bg-gray-100">
+      <div class="flex items-center justify-between">
+        <span class="text-lg font-bold mr-4 text-gray-700">{{ track.strAlbum }}</span>
+        <span class="text-lg font-bold text-gray-700">{{ track.strArtist }}</span>
+      </div>
+      <div class="flex items-center">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" (click)="playTrack(i)">
+          Play
+        </button>
+        <app-button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Share</app-button>
+      </div>
+    </li>
+  </ul>
+  <div class="audio-player" *ngIf="currentTrack">
+    <audio #audioPlayer preload="metadata" controls></audio>
+    <div class="audio-controls">
+      <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2" (click)="playPause(audioPlayer)">
+        <i class="fas fa-play" *ngIf="!audioPlayer.paused"></i>
+        <i class="fas fa-pause" *ngIf="audioPlayer.paused"></i>
+      </button>
+    </div>
+  </div>
+</div>
